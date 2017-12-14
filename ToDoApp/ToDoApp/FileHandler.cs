@@ -9,10 +9,15 @@ namespace ToDoApp
 {
     class FileHandler
     {
+        string path = "";
+
+        static void textreader()
+        {
+                string[] contentOfFile = File.ReadAllLines(path);
+        }
 
         static void textcreator(List<string> addedList)
-        {
-            string path = 
+        {          
             using (StreamWriter outputfile = new StreamWriter(path, true))
                 foreach(string line in addedList)
                 {

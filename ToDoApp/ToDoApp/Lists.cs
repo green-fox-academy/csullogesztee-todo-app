@@ -11,33 +11,44 @@ namespace ToDoApp
         //create a new list from Console
         public static List<string> HandleListFromConsol(string[] textFromConsol)
         {
-            List<string> handledList = new List<string>();
+            List<string> handledListFromConsol = new List<string>();
 
-            foreach(string element in textFromConsol)
+            for(int i = 1; i < textFromConsol.Length; i++)
             {
-                handledList.Add(element);
+                handledListFromConsol.Add(textFromConsol[i]);
             }
 
-            return handledList;
+            return handledListFromConsol;
         }
         
         //handle the list from file
-        //public static List<string> ListFromFile(string[] textFromFile)
-        //{
-        //    List<string> handledList = new List<string>();
 
-        //    foreach (string element in textFromFile)
-        //    {
-        //        handledList.Add(element);
-        //    }
+        public List<string> ListFromFile = new List<string>();
+        
+        public static List<string> CreateListFromConsol(string[] textFromFile)
+        {
+            foreach(string element in textFromFile)
+            {
+                ListFromFile.Add(element);
+            }
 
-        //    return handledList;
-        //}
-
+            return ListFromFile;
+        }
         //modify a list from file
         //1. Add
+        public static void AddElementToList(List<string> listfromconsol, List<string> listfromfile)
+        {
+            foreach(string line in listfromconsol)
+            {
+                listfromfile.Add(line);
+            }
+        }
 
         //2. Remove
+        public static void RemoveElementFromList(string secondElement, List<string> listfromfile)
+        {
+            listfromfile.Remove((int.Parse(secondElement) - 1));
+        }
 
         //3. AddCheck
     }
