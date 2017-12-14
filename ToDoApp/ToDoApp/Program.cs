@@ -17,7 +17,14 @@ namespace ToDoApp
             //{
             //
             //}
-            
+            if(addedtext[0] == "-l")
+            {
+                Printer.ListPrinter(Lists.CreateListFromFile(FileHandler.TextReader()));
+            }
+            else if(addedtext[0] == "-a")
+            {
+                FileHandler.TextCreator(Lists.HandleListFromConsol(addedtext));
+            }
             
             Console.ReadLine();
         }

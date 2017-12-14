@@ -11,12 +11,14 @@ namespace ToDoApp
     {
         string path = @"C:\Users\Esztee\greenfox\csullogesztee-todo-app\ToDoApp\ToDoApp\bin\ToDo.txt";
 
-        static void textreader()
+        public static string[] TextReader()
         {
-                string[] contentOfFile = File.ReadAllLines(path);
+            string[] contentOfFile = File.ReadAllLines(path);
+            
+            return contentOfFile;
         }
 
-        static void textcreator(List<string> addedList)
+        public static void TextCreator(List<string> addedList)
         {          
             using (StreamWriter outputfile = new StreamWriter(path, true))
                 foreach(string line in addedList)

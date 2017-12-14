@@ -25,7 +25,7 @@ namespace ToDoApp
 
         public List<string> ListFromFile = new List<string>();
         
-        public static List<string> CreateListFromConsol(string[] textFromFile)
+        public static List<string> CreateListFromFile(string[] textFromFile)
         {
             foreach(string element in textFromFile)
             {
