@@ -10,8 +10,8 @@ namespace ToDoApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
-            string[] addedtext = Console.ReadLine().Split(' ');
+            //Console.WriteLine();
+            //string[] addedtext = Console.ReadLine().Split(' ');
 
             var printer = new Printer();
             var fileHandler = new FileHandler();
@@ -19,30 +19,28 @@ namespace ToDoApp
 
             List<string> modifiedList = new List<string>();
 
-            //if (addedtext[] == null)
-            //{
-            //    printer.ListPrinter(lists.CreateListFromFile(fileHandler.NullReader()));
-            //}
-            if (addedtext[0] == "-l")
+            if (args.Length == 0)
+            {
+                printer.ListPrinter(lists.CreateListFromFile(fileHandler.NullReader()));
+            }
+            else if (args[0] == "-l")
             {
                 printer.ListPrinter(lists.CreateListFromFile(fileHandler.TextReader()));
             }
-            else if (addedtext[0] == "-a")
+            else if (args[0] == "-a")
             {
-                fileHandler.TextCreator(lists.HandleListFromConsol(addedtext));
+                fileHandler.TextCreator(lists.HandleListFromConsol(args));
             }
-            else if (addedtext[0] == "-r")
+            else if (args[0] == "-r")
             {
-                modifiedList = lists.RemoveElementFromList(addedtext[1], lists.CreateListFromFile(fileHandler.TextReader()));
+                modifiedList = lists.RemoveElementFromList(args[1], lists.CreateListFromFile(fileHandler.TextReader()));
                 fileHandler.TextChanger(modifiedList);
             }
-            else if (addedtext[0] == "-c")
+            else if (args[0] == "-c")
             {
-                modifiedList = lists.ModifiedElementFromList(addedtext[1], lists.CreateListFromFile(fileHandler.TextReader()));
+                modifiedList = lists.ModifiedElementFromList(args[1], lists.CreateListFromFile(fileHandler.TextReader()));
                 fileHandler.TextChanger(modifiedList);
             }
-            
-            Console.ReadLine();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace ToDoApp
 
             return contentOfFile;
         }
+
         public string[] TextReader()
         {
             string[] contentOfFile = File.ReadAllLines(path);
@@ -26,8 +27,9 @@ namespace ToDoApp
 
         public void TextCreator(List<string> addedList)
         {
+            
             int counter = TextReader().Length;
-            using (StreamWriter outputfile = new StreamWriter(path, true))                      
+            using (StreamWriter outputfile = new StreamWriter(path, true))
             foreach (string line in addedList)
             {
                 counter++;
