@@ -45,10 +45,12 @@ namespace ToDoApp
         }
 
         //2. Remove
-        //public static void RemoveElementFromList(string secondElement, List<string> listfromfile)
-        //{
-        //    listfromfile.Remove((int.Parse(secondElement) - 1));
-        //}
+        public List<string> RemoveElementFromList(string secondElement, List<string> listfromfile)
+        {
+            listfromfile.RemoveAt((int.Parse(secondElement) - 1));
+
+            return listfromfile;
+        }
 
         //3. AddCheck
     }

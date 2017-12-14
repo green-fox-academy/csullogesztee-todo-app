@@ -11,6 +11,12 @@ namespace ToDoApp
     {
         string path = @"C:\Users\Esztee\greenfox\csullogesztee-todo-app\ToDoApp\ToDoApp\bin\Debug\ToDo.txt";
 
+        public string[] NullReader()
+        {
+            string[] contentOfFile = File.ReadAllLines(@"C:\Users\Esztee\greenfox\csullogesztee-todo-app\ToDoApp\ToDoApp\bin\Debug\NullMessage.txt");
+
+            return contentOfFile;
+        }
         public string[] TextReader()
         {
             string[] contentOfFile = File.ReadAllLines(path);
@@ -25,6 +31,15 @@ namespace ToDoApp
             {
                 outputfile.WriteLine(line);
             }
+        }
+
+        public void TextChanger(List<string> addedList)
+        {
+            using (StreamWriter outputfile = new StreamWriter(path))
+                foreach (string line in addedList)
+                {
+                    outputfile.WriteLine(line);
+                }
         }
     }
 }

@@ -17,17 +17,28 @@ namespace ToDoApp
             var fileHandler = new FileHandler();
             var lists = new Lists();
 
+            List<string> modifiedList = new List<string>();
+
             //if (addedtext[] == null)
             //{
-            //
+            //    printer.ListPrinter(lists.CreateListFromFile(fileHandler.NullReader()));
             //}
-            if(addedtext[0] == "-l")
+            if (addedtext[0] == "-l")
             {
                 printer.ListPrinter(lists.CreateListFromFile(fileHandler.TextReader()));
             }
-            else if(addedtext[0] == "-a")
+            else if (addedtext[0] == "-a")
             {
                 fileHandler.TextCreator(lists.HandleListFromConsol(addedtext));
+            }
+            else if (addedtext[0] == "-r")
+            {
+                modifiedList = lists.RemoveElementFromList(addedtext[1], lists.CreateListFromFile(fileHandler.TextReader()));
+                fileHandler.TextChanger(modifiedList);
+            }
+            else if (addedtext[0] == "-c")
+            {
+
             }
             
             Console.ReadLine();
