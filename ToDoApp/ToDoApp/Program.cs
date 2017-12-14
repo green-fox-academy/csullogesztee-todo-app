@@ -25,7 +25,14 @@ namespace ToDoApp
             }
             else if (args[0] == "-l")
             {
-                printer.ListPrinter(lists.CreateListFromFile(fileHandler.TextReader()));
+                if(lists.CreateListFromFile(fileHandler.TextReader()).Count == 0)
+                {
+                    Console.WriteLine("No todos for today! :)");
+                }
+                else
+                {
+                    printer.ListPrinter(lists.CreateListFromFile(fileHandler.TextReader()));
+                }
             }
             else if (args[0] == "-a")
             {
