@@ -13,17 +13,21 @@ namespace ToDoApp
             Console.WriteLine();
             string[] addedtext = Console.ReadLine().Split(' ');
 
+            var printer = new Printer();
+            var fileHandler = new FileHandler();
+            var lists = new Lists();
+
             //if (addedtext[] == null)
             //{
             //
             //}
             if(addedtext[0] == "-l")
             {
-                Printer.ListPrinter(Lists.CreateListFromFile(FileHandler.TextReader()));
+                printer.ListPrinter(lists.CreateListFromFile(fileHandler.TextReader()));
             }
             else if(addedtext[0] == "-a")
             {
-                FileHandler.TextCreator(Lists.HandleListFromConsol(addedtext));
+                fileHandler.TextCreator(lists.HandleListFromConsol(addedtext));
             }
             
             Console.ReadLine();

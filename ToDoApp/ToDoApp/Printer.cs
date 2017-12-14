@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ToDoApp
 {
-    class Printer
+    public class Printer
     {
-        public static void ListPrinter(List<string> AnyList)
+        public void ListPrinter(List<string> AnyList)
         {
             foreach (string line in AnyList)
             {

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ToDoApp
 {
-    class Lists
+    public class Lists
     {
         //create a new list from Console
-        public static List<string> HandleListFromConsol(string[] textFromConsol)
+        public List<string> HandleListFromConsol(string[] textFromConsol)
         {
             List<string> handledListFromConsol = new List<string>();
 
@@ -25,7 +25,7 @@ namespace ToDoApp
 
         public List<string> ListFromFile = new List<string>();
         
-        public static List<string> CreateListFromFile(string[] textFromFile)
+        public List<string> CreateListFromFile(string[] textFromFile)
         {
             foreach(string element in textFromFile)
             {
@@ -36,7 +36,7 @@ namespace ToDoApp
         }
         //modify a list from file
         //1. Add
-        public static void AddElementToList(List<string> listfromconsol, List<string> listfromfile)
+        public void AddElementToList(List<string> listfromconsol, List<string> listfromfile)
         {
             foreach(string line in listfromconsol)
             {
@@ -45,10 +45,10 @@ namespace ToDoApp
         }
 
         //2. Remove
-        public static void RemoveElementFromList(string secondElement, List<string> listfromfile)
-        {
-            listfromfile.Remove((int.Parse(secondElement) - 1));
-        }
+        //public static void RemoveElementFromList(string secondElement, List<string> listfromfile)
+        //{
+        //    listfromfile.Remove((int.Parse(secondElement) - 1));
+        //}
 
         //3. AddCheck
     }
