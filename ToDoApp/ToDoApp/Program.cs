@@ -13,12 +13,12 @@ namespace ToDoApp
             Console.WriteLine();
             string[] addedtext = Console.ReadLine().Split(' ');
 
-            if (addedtext[] == null)
-            {
-
-            }
+            //if (addedtext[] == null)
+            //{
+            //
+            //}
             
-
+            
             Console.ReadLine();
         }
     }

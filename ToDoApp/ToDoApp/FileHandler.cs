@@ -9,7 +9,7 @@ namespace ToDoApp
 {
     class FileHandler
     {
-        string path = "";
+        string path = @"C:\Users\Esztee\greenfox\csullogesztee-todo-app\ToDoApp\ToDoApp\bin\ToDo.txt";
 
         static void textreader()
         {
@@ -23,7 +23,6 @@ namespace ToDoApp
                 {
                     outputfile.WriteLine(line);
                 }
-
         }
     }
 }
