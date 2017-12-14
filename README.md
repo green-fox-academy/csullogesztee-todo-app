@@ -1,1 +1,1 @@
-# csullogesztee_handle-todo-app
+# csullogesztee-todo-app
