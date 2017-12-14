@@ -38,7 +38,8 @@ namespace ToDoApp
             }
             else if (addedtext[0] == "-c")
             {
-
+                modifiedList = lists.ModifiedElementFromList(addedtext[1], lists.CreateListFromFile(fileHandler.TextReader()));
+                fileHandler.TextChanger(modifiedList);
             }
             
             Console.ReadLine();

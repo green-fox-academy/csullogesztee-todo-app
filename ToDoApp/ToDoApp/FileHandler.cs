@@ -25,11 +25,14 @@ namespace ToDoApp
         }
 
         public void TextCreator(List<string> addedList)
-        {          
-            using (StreamWriter outputfile = new StreamWriter(path, true))
-            foreach(string line in addedList)
+        {
+            int counter = TextReader().Length;
+            using (StreamWriter outputfile = new StreamWriter(path, true))                      
+            foreach (string line in addedList)
             {
-                outputfile.WriteLine(line);
+                counter++;
+                var builtsrting = new StringBuilder(Convert.ToString(counter) + " - [ ] " + line);
+                outputfile.WriteLine(builtsrting);
             }
         }
 

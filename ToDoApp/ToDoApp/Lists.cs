@@ -53,5 +53,19 @@ namespace ToDoApp
         }
 
         //3. AddCheck
+        public List<string> ModifiedElementFromList(string secondElement, List<string> listfromfile)
+        {
+            string[] arrayfromline = listfromfile[(int.Parse(secondElement) - 1)].Split(' ');
+            arrayfromline[2] = "[ x";
+            string newline = "";
+            foreach(string part in arrayfromline)
+            {
+                newline = newline + part + " ";
+            }
+            listfromfile.RemoveAt((int.Parse(secondElement) - 1));
+            listfromfile.Insert((int.Parse(secondElement) - 1), newline);
+
+            return listfromfile;
+        }
     }
 }
